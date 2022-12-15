@@ -76,8 +76,11 @@
 
             $sql = "UPDATE Pokemon SET Name = $Name, HP = $HP, Atk = $Atk, Def = $Def, SpAtk = $SpAtk, SpDef = $SpDef, Speed = $Speed, Type1 = $Type1, Type2 = $Type2 WHERE ID = $ID";
 
-            $stmt = $conn->prepare($sql);
-            $stmt->execute();        
+            if ($conn->query($sql) === TRUE) {
+              echo "Record updated successfully";
+            } else {
+              echo "Error updating record: " . $conn->error;
+            }       
     }
     ?>
 
