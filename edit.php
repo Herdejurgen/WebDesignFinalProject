@@ -64,24 +64,12 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $ID = $_POST["ID"];
-            $Name = $_POST["Name"];
-            $HP = $_POST["HP"];
-            $Atk = $_POST["Atk"];
-            $Def = $_POST["Def"];
-            $SpAtk = $_POST["SpAtk"];
-            $SpDef = $_POST["SpDef"];
-            $Speed = $_POST["Speed"];
-            $Type1 = $_POST["Type1"];
-            $Type2 = $_POST["Type2"];
+            
 
-            $sql = "UPDATE Pokemon (ID, Name, HP, Atk, Def, SpAtk, SpDef, Speed, Type1, Type2) VALUES (?,?,?,?,?,?,?,?,?,?)";
+            $sql = "UPDATE Pokemon SET Name = $_POST["Name"], HP = $_POST["HP"], Atk = $_POST["Atk"], Def = $_POST["Def"], SpAtk = $_POST["SpAtk"], SpDef = $_POST["SpDef"], Speed = $_POST["Speed"], Type1 = $_POST["Type1"], Type2 = $_POST["Type2"] WHERE ID = $_POST["ID"];
 
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param('isiiiiiiss',  $ID, $Name, $HP, $Atk, $Def, $SpAtk, $SpDef, $Speed, $Type1, $Type2);
-
-            $stmt->execute();
-            printf("%d row inserted.\n", $stmt->affected_rows);
-        
+            $stmt->execute();        
     }
     ?>
 
