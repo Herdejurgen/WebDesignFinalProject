@@ -63,10 +63,9 @@
     }   
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-            $ID = $_POST["ID"];
-            
+            $ID = $_POST["ID"];            
 
-            $sql = "UPDATE Pokemon SET Name = '$_POST["Name"]', HP = $_POST["HP"], Atk = $_POST["Atk"], Def = $_POST["Def"], SpAtk = $_POST["SpAtk"], SpDef = $_POST["SpDef"], Speed = $_POST["Speed"], Type1 = $_POST["Type1"], Type2 = $_POST["Type2"] WHERE ID = $_POST["ID"]";
+            $sql = "UPDATE Pokemon SET Name = $_POST["Name"], HP = $_POST["HP"], Atk = $_POST["Atk"], Def = $_POST["Def"], SpAtk = $_POST["SpAtk"], SpDef = $_POST["SpDef"], Speed = $_POST["Speed"], Type1 = $_POST["Type1"], Type2 = $_POST["Type2"] WHERE ID = $_POST["ID"]";
 
             $stmt = $conn->prepare($sql);
             $stmt->execute();        
