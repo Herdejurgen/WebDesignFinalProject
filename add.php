@@ -62,7 +62,6 @@
       die("Connection failed: " . $conn->connect_error);
     }
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
             $ID = $_POST["ID"];
             $Name = $_POST["Name"];
             $HP = $_POST["HP"];
