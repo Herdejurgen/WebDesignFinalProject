@@ -29,7 +29,7 @@
         
         $ID = $_POST["ID"];
 
-        $sql = "DELETE FROM Pokemon WHERE id = $ID"
+        $sql = "DELETE FROM Pokemon WHERE id = $ID";
 
         if ($conn->query($sql) === TRUE) {
           echo "Record deleted successfully";
