@@ -74,7 +74,7 @@
             $Type1 = $_POST["Type1"];
             $Type2 = $_POST["Type2"];            
 
-            $sql = "UPDATE Pokemon SET Name = $Name, HP = $HP, Atk = $Atk, Def = $Def, SpAtk = $SpAtk, SpDef = $SpDef, Speed = $Speed, Type1 = $Type1, Type2 = $Type2 WHERE ID = $_POST["ID"]";
+            $sql = "UPDATE Pokemon SET Name = $Name, HP = $HP, Atk = $Atk, Def = $Def, SpAtk = $SpAtk, SpDef = $SpDef, Speed = $Speed, Type1 = $Type1, Type2 = $Type2 WHERE ID = $ID";
 
             $stmt = $conn->prepare($sql);
             $stmt->execute();        
