@@ -54,20 +54,21 @@
       die("Connection failed: " . $conn->connect_error);
     }
     if($_POST['ID'] != null){
-    $ID = $_POST['ID'];
-    $Name = $_POST['Name'];
-    $Atk = $_POST['Atk'];
-    $Def = $_POST['Def'];
-    $SpAtk = $_POST['SpAtk'];
-    $SpDef = $_POST['SpDef'];
-    $Speed = $_POST['Speed'];
-    $Type1 = $_POST['Type1'];
-    $Type2 = $_POST['Type2'];
 
     $sql = "INSERT INTO Pokemon values (?,?,?,?,?,?,?,?,?,?)";
-    echo $sql;
+    //echo $sql;
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("isiiiiiiss", $ID, $Name, $HP, $Atk, $Def, $SpAtk, $SpDef, $Speed, $Type1, $Type2);
+
+        $ID = $_POST['ID'];
+        $Name = $_POST['Name'];
+        $Atk = $_POST['Atk'];
+        $Def = $_POST['Def'];
+        $SpAtk = $_POST['SpAtk'];
+        $SpDef = $_POST['SpDef'];
+        $Speed = $_POST['Speed'];
+        $Type1 = $_POST['Type1'];
+        $Type2 = $_POST['Type2'];
 
         $stmt->execute();
         printf("%d row inserted.\n", $stmt->affected_rows);
