@@ -24,6 +24,7 @@
       <th>SpAtk</th>
       <th>SpDef</th>
       <th>Speed</th>
+      <th>Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -59,7 +60,7 @@ if ($result->num_rows > 0) {
     <td>
         <form method="get" action="edit.php">
             <input type="hidden" id="ID" value="<?=$row["ID"]?>"></input>
-            <button type="submit" class="btn btn-sm">Edit</button>
+            <button type="submit" class="btn btn-sm btn-warning">Edit</button>
         </form>        
     </td>
   </tr>
