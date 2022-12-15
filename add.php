@@ -34,7 +34,7 @@
     $sql = "insert into Pokemon (Name) value (?)";
     //echo $sql;
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("Name", $Name);
+        $stmt->bind_param("s", $Name);
         $stmt->execute();
     }
     
