@@ -17,7 +17,7 @@
       <div class="mb-3">
 
         <label for="ID" class="form-label">ID</label>
-        <input type="text" class="form-control" id="ID" name="ID">
+        <input type="text" class="form-control" id="ID" name="ID" value="<?php = $_GET["name"]; ?>">
 
         <label for="Name" class="form-label">Name</label>
         <input type="text" class="form-control" id="Name" name="Name">
