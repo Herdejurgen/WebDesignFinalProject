@@ -62,10 +62,6 @@
       die("Connection failed: " . $conn->connect_error);
     }   
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if($_POST['ID'] != null){
-
-            //$sql = ;
-            //echo $sql;
 
             $ID = $_POST["ID"];
             $Name = $_POST["Name"];
@@ -85,7 +81,7 @@
 
             $stmt->execute();
             printf("%d row inserted.\n", $stmt->affected_rows);
-        }
+        
     }
     ?>
 

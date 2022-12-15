@@ -62,6 +62,11 @@
       die("Connection failed: " . $conn->connect_error);
     }
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if($_POST['ID'] != null){
+
+            //$sql = ;
+            //echo $sql;
+
             $ID = $_POST["ID"];
             $Name = $_POST["Name"];
             $HP = $_POST["HP"];
@@ -77,7 +82,8 @@
             $stmt->bind_param('isiiiiiiss',  $ID, $Name, $HP, $Atk, $Def, $SpAtk, $SpDef, $Speed, $Type1, $Type2);
 
             $stmt->execute();
-            printf("%d row inserted.\n", $stmt->affected_rows);        
+            printf("%d row inserted.\n", $stmt->affected_rows);
+        }
     }
     ?>
 
