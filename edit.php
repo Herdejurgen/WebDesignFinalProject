@@ -17,7 +17,7 @@
       <div class="mb-3">
 
         <label for="ID" class="form-label">ID</label>
-        <input type="text" class="form-control" id="ID" name="ID" value="<?php echo $_POST["ID"]; ?>">
+        <input type="text" class="form-control" id="ID" name="ID" value="<?php echo $_POST["ID"]; ?>" readonly style="bg-color:darkgrey;">
 
         <label for="Name" class="form-label">Name</label>
         <input type="text" class="form-control" id="Name" name="Name" value="<?php echo $_POST["Name"]; ?>">
