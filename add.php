@@ -17,6 +17,9 @@
         <label for="Name" class="form-label">Name</label>
         <input type="text" class="form-control" id="Name" name="Name">
 
+        <label for="HP" class="form-label">Health Points</label>
+        <input type="text" class="form-control" id="HP" name="HP">
+
         <label for="Atk" class="form-label">Attack</label>
         <input type="text" class="form-control" id="Atk" name="Atk">
 
