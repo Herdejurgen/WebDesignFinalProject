@@ -59,7 +59,7 @@ if ($result->num_rows > 0) {
     <td><?=$row["Speed"]?></td>
     <td>
         <form method="get" action="edit.php">
-            <input type="hidden" id="ID" value="<?=$row["ID"]?>"></input>
+            <input type="hidden" id="ID" value=<?=$row["ID"]?>></input>
             <button type="submit" class="btn btn-sm btn-warning">Edit</button>
         </form>        
     </td>
