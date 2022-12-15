@@ -24,6 +24,8 @@
       <th>SpAtk</th>
       <th>SpDef</th>
       <th>Speed</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
       <th>Edit</th>
     </tr>
   </thead>
@@ -57,9 +59,20 @@ if ($result->num_rows > 0) {
     <td><?=$row["SpAtk"]?></td>
     <td><?=$row["SpDef"]?></td>
     <td><?=$row["Speed"]?></td>
+    <td><?=$row["Type1"]?></td>
+    <td><?=$row["Type2"]?></td>
     <td>
-        <form method="get" action="edit.php">
+        <form method="post" action="edit.php">
             <input type="hidden" id="ID" name="ID" value="<?=$row["ID"]?>"></input>
+            <input type="hidden" id="Name" name="Name" value="<?=$row["Name"]?>"></input>
+            <input type="hidden" id="HP" name="HP" value="<?=$row["HP"]?>"></input>
+            <input type="hidden" id="Atk" name="Atk" value="<?=$row["Atk"]?>"></input>
+            <input type="hidden" id="Def" name="Def" value="<?=$row["Def"]?>"></input>
+            <input type="hidden" id="SpAtk" name="SpAtk" value="<?=$row["SpAtk"]?>"></input>
+            <input type="hidden" id="SpDef" name="SpDef" value="<?=$row["SpDef"]?>"></input>
+            <input type="hidden" id="Speed" name="Speed" value="<?=$row["Speed"]?>"></input>
+            <input type="hidden" id="Type1" name="Type1" value="<?=$row["Type1"]?>"></input>
+            <input type="hidden" id="Type2" name="Type2" value="<?=$row["Type2"]?>"></input>
             <button type="submit" class="btn btn-sm btn-warning">Edit</button>
         </form>        
     </td>
