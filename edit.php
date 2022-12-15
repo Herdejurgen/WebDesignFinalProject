@@ -13,7 +13,7 @@
         <a class="btn btn-primary" href="/add.php">Add</a>
         <a class="btn btn-danger" href="/delete.php">Delete</a>
     </div>
-    <form method="post" action="delete.php">
+    <form method="post" action="edit.php">
       <div class="mb-3">
 
         <label for="ID" class="form-label">ID</label>
@@ -60,7 +60,33 @@
     // Check connection
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
-    }    
+    }   
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if($_POST['ID'] != null){
+
+            //$sql = ;
+            //echo $sql;
+
+            $ID = $_POST["ID"];
+            $Name = $_POST["Name"];
+            $HP = $_POST["HP"];
+            $Atk = $_POST["Atk"];
+            $Def = $_POST["Def"];
+            $SpAtk = $_POST["SpAtk"];
+            $SpDef = $_POST["SpDef"];
+            $Speed = $_POST["Speed"];
+            $Type1 = $_POST["Type1"];
+            $Type2 = $_POST["Type2"];
+
+            $sql = "UPDATE Pokemon (ID, Name, HP, Atk, Def, SpAtk, SpDef, Speed, Type1, Type2) VALUES (?,?,?,?,?,?,?,?,?,?)");
+
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param('isiiiiiiss',  $ID, $Name, $HP, $Atk, $Def, $SpAtk, $SpDef, $Speed, $Type1, $Type2);
+
+            $stmt->execute();
+            printf("%d row inserted.\n", $stmt->affected_rows);
+        }
+    }
     ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

@@ -66,7 +66,6 @@
 
             //$sql = ;
             //echo $sql;
-            echo $_POST["ID"];
 
             $ID = $_POST["ID"];
             $Name = $_POST["Name"];
@@ -78,8 +77,6 @@
             $Speed = $_POST["Speed"];
             $Type1 = $_POST["Type1"];
             $Type2 = $_POST["Type2"];
-
-            echo $ID;
 
             $stmt = $conn->prepare("INSERT INTO Pokemon (ID, Name, HP, Atk, Def, SpAtk, SpDef, Speed, Type1, Type2) VALUES (?,?,?,?,?,?,?,?,?,?)");
             $stmt->bind_param('isiiiiiiss',  $ID, $Name, $HP, $Atk, $Def, $SpAtk, $SpDef, $Speed, $Type1, $Type2);
