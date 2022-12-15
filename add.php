@@ -58,6 +58,7 @@
 
             //$sql = ;
             //echo $sql;
+            echo $_POST["ID"];
 
             $ID = $_POST["ID"];
             $Name = $_POST["Name"];
