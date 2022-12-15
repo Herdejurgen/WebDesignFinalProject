@@ -11,7 +11,6 @@
     <div class="btn-group">
         <a class="btn btn-secondary" href="/index.php">Home</a>
         <a class="btn btn-primary" href="/add.php">Add</a>
-        <a class="btn btn-danger" href="/delete.php">Delete</a>
     </div>
 <table class="table table-striped">
   <thead>
@@ -27,6 +26,7 @@
       <th>Type 1</th>
       <th>Type 2</th>
       <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -75,6 +75,12 @@ if ($result->num_rows > 0) {
             <input type="hidden" id="Type2" name="Type2" value="<?=$row["Type2"]?>"></input>
             <button type="submit" class="btn btn-sm btn-warning">Edit</button>
         </form>        
+    </td>
+    <td>
+    <form method="post" action="delete.php">
+        <input type="hidden" id="ID" name="ID" value="<?=$row["ID"]?>"></input>
+        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+    </form>
     </td>
   </tr>
 <?php
