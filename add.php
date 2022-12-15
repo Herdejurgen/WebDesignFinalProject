@@ -59,16 +59,7 @@
     $sql = "INSERT INTO Pokemon values (?,?,?,?,?,?,?,?,?,?)";
     //echo $sql;
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $ID);
-        $stmt->bind_param("s", $Name);
-        $stmt->bind_param("i", $HP);
-        $stmt->bind_param("i", $Atk);
-        $stmt->bind_param("i", $Def);
-        $stmt->bind_param("i", $SpAtk);
-        $stmt->bind_param("i", $SpDef);
-        $stmt->bind_param("i", $Speed);
-        $stmt->bind_param("s", $Type1);
-        $stmt->bind_param("s", $Type2);
+        $stmt->bind_param("isiiiiiiss", $ID, $Name, $HP, $Atk, $Def, $SpAtk, $SpDef, $Speed, $Type1, $Type2);
 
         $stmt->execute();
     }
