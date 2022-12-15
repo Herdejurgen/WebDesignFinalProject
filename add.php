@@ -62,6 +62,7 @@
 
             $ID = $_POST["ID"];
             $Name = $_POST["Name"];
+            $HP = $_POST["HP"];
             $Atk = $_POST["Atk"];
             $Def = $_POST["Def"];
             $SpAtk = $_POST["SpAtk"];
