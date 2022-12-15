@@ -3,24 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Instructors</title>
+    <title>Pokemon</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Instructors</h1>
+    <h1>Pokemon</h1>
 <table class="table table-striped">
   <thead>
     <tr>
       <th>ID</th>
       <th>Name</th>
+      <th>HP</th>
+      <th>Atk</th>
+      <th>Def</th>
+      <th>SpAtk</th>
+      <th>SpDef</th>
+      <th>Speed</th>
     </tr>
   </thead>
   <tbody>
     <?php
 $servername = "localhost";
-$username = "projecto_homework3";
-$password = "0w_zeP}]OVy0";
-$dbname = "projecto_homework3";
+$username = "herdeju1_FinalProject";
+$password = "U\$gvulNHsye?";
+$dbname = "herdeju1_FinalProject";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -29,7 +35,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT instructor_id, instructor_name from instructor";
+$sql = "SELECT * from Pokemon";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -37,8 +43,14 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["instructor_id"]?></td>
-    <td><?=$row["instructor_name"]?></td>
+    <td><?=$row["ID"]?></td>
+    <td><?=$row["Name"]?></td>
+    <td><?=$row["HP"]?></td>
+    <td><?=$row["Atk"]?></td>
+    <td><?=$row["Def"]?></td>
+    <td><?=$row["SpAtk"]?></td>
+    <td><?=$row["SpDef"]?></td>
+    <td><?=$row["Speed"]?></td>
   </tr>
 <?php
   }
