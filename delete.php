@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Add Pokemon</h1>
+    <h1>Delete Pokemon</h1>
     <div class="btn-group">
         <a class="btn btn-secondary" href="/index.php">Home</a>
         <a class="btn btn-primary" href="/add.php">Add</a>
@@ -62,8 +62,7 @@
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {        
     }
     ?>
 

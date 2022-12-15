@@ -57,6 +57,12 @@ if ($result->num_rows > 0) {
     <td><?=$row["SpAtk"]?></td>
     <td><?=$row["SpDef"]?></td>
     <td><?=$row["Speed"]?></td>
+    <td>
+        <form method="get" action="edit.php">
+            <input type="hidden" id="ID" value="<?=$row["ID"]?>"></input>
+            <button type="submit" class="btn btn-sm">Edit</button>
+        </form>        
+    </td>
   </tr>
 <?php
   }
