@@ -9,8 +9,10 @@
   <body>
     <h1>Pokemon</h1>
     <div class="btn-group">
+        <a class="btn btn-secondary" href="/index.php">Home</a>
         <a class="btn btn-primary" href="/add.php">Add</a>
-        <a class="btn btn-secondary">Delete</a>
+        <a class="btn btn-warning">Edit</a>
+        <a class="btn btn-danger" href="/delete.php">Delete</a>
     </div>
 <table class="table table-striped">
   <thead>
