@@ -9,7 +9,7 @@
   <body>
     <h1>Pokemon</h1>
     <div class="btn btn-group">
-        <div class="btn btn-primary">Add</div>
+        <div class="btn btn-primary" href="/add.php">Add</div>
         <div class="btn btn-secondary">Delete</div>
     </div>
 <table class="table table-striped">
