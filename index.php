@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1>Pokemon</h1>
-    <div class="btn btn-group">
+    <div class="btn-group">
         <a class="btn btn-primary" href="/add.php">Add</a>
         <a class="btn btn-secondary">Delete</a>
     </div>
