@@ -72,7 +72,7 @@
 
             echo $ID;
 
-            $stmt = $conn->prepare("INSERT INTO Pokemon (ID, Name, HP, Atk, Def, SpAtk, SpDef, Speed, Type1, Type2) values (?,?,?,?,?,?,?,?,?,?)");
+            $stmt = $conn->prepare("INSERT INTO Pokemon (ID, Name, HP, Atk, Def, SpAtk, SpDef, Speed, Type1, Type2) VALUES (?,?,?,?,?,?,?,?,?,?)");
             $stmt->bind_param('isiiiiiiss', $ID, $Name, $HP, $Atk, $Def, $SpAtk, $SpDef, $Speed, $Type1, $Type2);
 
             $stmt->execute();
