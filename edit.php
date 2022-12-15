@@ -74,7 +74,7 @@
             $Type1 = $_POST["Type1"];
             $Type2 = $_POST["Type2"];
 
-            $sql = "UPDATE Pokemon (ID, Name, HP, Atk, Def, SpAtk, SpDef, Speed, Type1, Type2) VALUES (?,?,?,?,?,?,?,?,?,?)");
+            $sql = "UPDATE Pokemon (ID, Name, HP, Atk, Def, SpAtk, SpDef, Speed, Type1, Type2) VALUES (?,?,?,?,?,?,?,?,?,?)";
 
             $stmt = $conn->prepare($sql);
             $stmt->bind_param('isiiiiiiss',  $ID, $Name, $HP, $Atk, $Def, $SpAtk, $SpDef, $Speed, $Type1, $Type2);
