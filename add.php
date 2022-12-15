@@ -55,10 +55,10 @@
     }
     if($_POST['ID'] != null){
 
-    $sql = "INSERT INTO Pokemon values (?,?,?,?,?,?,?,?,?,?)";
+    //$sql = ;
     //echo $sql;
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("isiiiiiiss", $ID, $Name, $HP, $Atk, $Def, $SpAtk, $SpDef, $Speed, $Type1, $Type2);
+        $stmt = $conn->prepare("INSERT INTO Pokemon values (?,?,?,?,?,?,?,?,?,?)";
+        $stmt->bind_param('isiiiiiiss', $ID, $Name, $HP, $Atk, $Def, $SpAtk, $SpDef, $Speed, $Type1, $Type2);
 
         $ID = $_POST['ID'];
         $Name = $_POST['Name'];
