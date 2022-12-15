@@ -11,7 +11,6 @@
     <div class="btn-group">
         <a class="btn btn-secondary" href="/index.php">Home</a>
         <a class="btn btn-primary" href="/add.php">Add</a>
-        <a class="btn btn-warning">Edit</a>
         <a class="btn btn-danger" href="/delete.php">Delete</a>
     </div>
     <form method="post" action="delete.php">

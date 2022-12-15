@@ -7,13 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Add Pokemon</h1>
+    <h1>Edit Pokemon</h1>
     <div class="btn-group">
         <a class="btn btn-secondary" href="/index.php">Home</a>
         <a class="btn btn-primary" href="/add.php">Add</a>
         <a class="btn btn-danger" href="/delete.php">Delete</a>
     </div>
-    <form method="post" action="add.php">
+    <form method="post" action="delete.php">
       <div class="mb-3">
 
         <label for="ID" class="form-label">ID</label>
@@ -61,32 +61,7 @@
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if($_POST['ID'] != null){
-
-            //$sql = ;
-            //echo $sql;
-            echo $_POST["ID"];
-
-            $ID = $_POST["ID"];
-            $Name = $_POST["Name"];
-            $HP = $_POST["HP"];
-            $Atk = $_POST["Atk"];
-            $Def = $_POST["Def"];
-            $SpAtk = $_POST["SpAtk"];
-            $SpDef = $_POST["SpDef"];
-            $Speed = $_POST["Speed"];
-            $Type1 = $_POST["Type1"];
-            $Type2 = $_POST["Type2"];
-
-            echo $ID;
-
-            $stmt = $conn->prepare("INSERT INTO Pokemon (ID, Name, HP, Atk, Def, SpAtk, SpDef, Speed, Type1, Type2) VALUES (?,?,?,?,?,?,?,?,?,?)");
-            $stmt->bind_param('isiiiiiiss',  $ID, $Name, $HP, $Atk, $Def, $SpAtk, $SpDef, $Speed, $Type1, $Type2);
-
-            $stmt->execute();
-            printf("%d row inserted.\n", $stmt->affected_rows);
-        }
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {        
     }
     ?>
 
