@@ -10,9 +10,34 @@
     <h1>Add Pokemon</h1>
     <form method="post" action="add.php">
       <div class="mb-3">
+
+        <label for="ID" class="form-label">ID</label>
+        <input type="text" class="form-control" id="ID" name="ID">
+
         <label for="Name" class="form-label">Name</label>
         <input type="text" class="form-control" id="Name" name="Name">
-        <div id="nameHelp" class="form-text">Enter the pokemon's name.</div>
+
+        <label for="Atk" class="form-label">Attack</label>
+        <input type="text" class="form-control" id="Atk" name="Atk">
+
+        <label for="Def" class="form-label">Defense</label>
+        <input type="text" class="form-control" id="Def" name="Def">
+
+        <label for="SpAtk" class="form-label">Special Attack</label>
+        <input type="text" class="form-control" id="SpAtk" name="SpAtk">
+
+        <label for="SpDef" class="form-label"> Special Defense</label>
+        <input type="text" class="form-control" id="SpDef" name="SpDef">
+
+        <label for="Speed" class="form-label">Speed</label>
+        <input type="text" class="form-control" id="Speed" name="Speed">
+
+        <label for="Type1" class="form-label">Type 1</label>
+        <input type="text" class="form-control" id="Type1" name="Type1">
+
+        <label for="Type2" class="form-label">Type 2</label>
+        <input type="text" class="form-control" id="Type2" name="Type2">
+
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -31,10 +56,20 @@
     if($_POST['Name'] != null){
     $Name = $_POST['Name'];
 
-    $sql = "insert into Pokemon (Name) value (?)";
+    $sql = "INSERT INTO Pokemon values (?,?,?,?,?,?,?,?,?,?)";
     //echo $sql;
         $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $ID);
         $stmt->bind_param("s", $Name);
+        $stmt->bind_param("i", $HP);
+        $stmt->bind_param("i", $Atk);
+        $stmt->bind_param("i", $Def);
+        $stmt->bind_param("i", $SpAtk);
+        $stmt->bind_param("i", $SpDef);
+        $stmt->bind_param("i", $Speed);
+        $stmt->bind_param("s", $Type1);
+        $stmt->bind_param("s", $Type2);
+
         $stmt->execute();
     }
     
