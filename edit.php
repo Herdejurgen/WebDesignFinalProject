@@ -57,6 +57,7 @@
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // Check connection
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
